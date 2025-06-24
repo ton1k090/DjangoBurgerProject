@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ <!-- slider_area_start -->
+    {% include 'product/_components/_slider.html' %}
+    <!-- slider_area_end -->
+
+    {% include 'product/_components/_bestburger.html' %}
+    <!-- features_room_startt -->
+    {% include 'product/_components/_presidentburger.html' %}
+        <!-- features_room_end -->
+    <!-- about_area_start -->
+    {% include 'product/_components/_about.html' %}
+        <!-- about_area_end -->
+    <!-- video_area_start -->
+    {% include 'product/_components/_video.html' %}
+    <!-- video_area_end -->
+
+    <!-- testimonial_area_start  -->
+        {% include 'product/_components/_testimonial.html' %}
+    <!-- testimonial_area_ned  -->
+
+    <!-- instragram_area_start -->
+    {% include 'product/_components/_instagram.html' %}
+    <!-- instragram_area_end -->
+
+{% endblock content %}

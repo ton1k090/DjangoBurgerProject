@@ -1,0 +1,20 @@
+<div class="Burger_President_area">
+            <div class="Burger_President_here">
+                {% for best in best_burgers %}
+                <div class="single_Burger_President">
+                    <div class="room_thumb">
+                        <img src="{{ best.image.url }}" alt="">
+                        <div class="room_heading d-flex justify-content-between align-items-center">
+                            <div class="room_heading_inner">
+                                <span>{{ best.price }}</span>
+                                <h3>{{ best.title }}</h3>
+                                <p>{{ best.description }}</p>
+                                <a href="#" class="boxed-btn3">Заказать</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>

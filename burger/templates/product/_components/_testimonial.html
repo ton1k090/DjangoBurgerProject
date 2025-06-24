@@ -1,0 +1,42 @@
+<div class="testimonial_area ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                                <div class="section_title mb-60 text-center">
+                                        <span>Отзывы</span>
+                                        <h3>Довольные покупатели</h3>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="testmonial_active owl-carousel">
+                                {% for review in reviews %}
+                                <div class="single_carousel">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <div class="single_testmonial text-center">
+                                                <p>{{ review.text }}</p>
+                                                <div class="testmonial_author">
+                                                    <div class="thumb">
+                                                        <img src="{{ review.photo.url }}" alt="">
+                                                    </div>
+                                                    <h4>{{ review.name }}</h4>
+                                                    <div class="stars">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
