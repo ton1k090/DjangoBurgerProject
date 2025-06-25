@@ -2,42 +2,19 @@
             <div class="footer_top">
                 <div class="container">
                     <div class="row">
+                        {% for contact in contacts %}
                         <div class="col-xl-4 col-md-6 col-lg-4">
                             <div class="footer_widget text-center ">
                                 <h3 class="footer_title pos_margin">
-                                        New York
+                                    {{contact.city }}
                                 </h3>
-                                <p>5th flora, 700/D kings road, <br>
-                                        green lane New York-1782 <br>
-                                        <a href="#">info@burger.com</a></p>
-                                <a class="number" href="#">+10 378 483 6782</a>
+                                <p>{{ contact.address }}</a></p>
+                                <a class="number" href="#">{{ contact.phone }}</a>
 
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget text-center ">
-                                <h3 class="footer_title pos_margin">
-                                    California
-                                </h3>
-                                <p>5th flora, 700/D kings road, <br>
-                                        green lane New York-1782 <br>
-                                        <a href="#">info@burger.com</a></p>
-                                <a class="number" href="#">+10 378 483 6782</a>
+                        {% endfor %}
 
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12 col-lg-4">
-                                <div class="footer_widget">
-                                        <h3 class="footer_title">
-                                                Stay Connected
-                                        </h3>
-                                        <form action="#" class="newsletter_form">
-                                            <input type="text" placeholder="Enter your mail">
-                                            <button type="submit">Sign Up</button>
-                                        </form>
-                                        <p class="newsletter_text">Stay connect with us to get exclusive offer!</p>
-                                    </div>
-                        </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-lg-4">

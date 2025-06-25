@@ -1,9 +1,11 @@
 from django.urls import path
 
-from blog.views import BlogListView, AboutView, ContactView
+from blog.views import BlogListView, BlogDetailView, PostByCategory, add_comment
 
 urlpatterns = [
     path('blog/', BlogListView.as_view(), name='blog'),
-    path('about/', AboutView.as_view(), name='about'),
-    path('contact/', ContactView.as_view(), name='contact')
+    path('blog/<slug:slug>/', BlogDetailView.as_view(), name='post_detail'),
+    path('category/<int:pk>', PostByCategory.as_view(), name='category_list' ),
+    path('add_comment/<slug:slug>/', add_comment, name='add_comment'),
+
 ]

@@ -1,0 +1,66 @@
+{% load blog_tags %}
+
+<div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <form action="#">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder='Search Keyword'
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Search Keyword'">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="button"><i class="ti-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Поиск</button>
+                            </form>
+                        </aside>
+
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Категории</h4>
+                            <ul class="list cat-list">
+                                {% get_all_categories as categories %}
+                                    {% for cat in categories %}
+                                <li>
+                                    <a href="{{ cat.get_absolute_url }}" class="d-flex">
+                                        <p>{{ cat }}</p>
+                                        <p>(17)</p>
+
+                                    </a>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                        </aside>
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Последние посты</h3>
+                            {% recent_posts as recent %}
+                            {% for rec in recent %}
+                            <div class="media post_item">
+                                <img src="{{ rec.image.url }}" width="100" height="100" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>{{ rec.title }}</h3>
+                                    </a>
+                                    <p>{{ rec.created_at }}</p>
+                                </div>
+                            </div>
+                                {% endfor %}
+                        </aside>
+
+                        <aside class="single_sidebar_widget newsletter_widget">
+                            <h4 class="widget_title">Подписаться на новости</h4>
+
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Подписаться</button>
+                            </form>
+                        </aside>
+                    </div>

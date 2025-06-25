@@ -1,0 +1,38 @@
+<div class="gallery_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                            <div class="section_title mb-70 text-center">
+                                    <span>Галлерея</span>
+                                    <h3>Нашаи работы</h3>
+                                </div>
+                    </div>
+                </div>
+            </div>
+                {% for gal in galleries %}
+
+                    {% if forloop.first %}
+            <div class="single_gallery big_img">
+                    <a class="popup-image" href="{{ gal.image.url }}">
+                        <i class="ti-plus"></i>
+                    </a>
+                <img src="{{ gal.image.url }}" alt="">
+            </div>
+                    {% endif %}
+            <div class="single_gallery small_img">
+                <a class="popup-image" href="{{ gal.image.url }}">
+                    <i class="ti-plus"></i>
+                </a>
+                <img src="{{ gal.image.url }}" alt="">
+            </div>
+                    {% if forloop.last %}
+            <div class="single_gallery big_img">
+                <a class="popup-image" href="{{ gal.image.url }}">
+                    <i class="ti-plus"></i>
+                </a>
+                <img src="{{ gal.image.url }}" alt="">
+            </div>
+                    {% endif %}
+
+            {% endfor %}
+        </div>
